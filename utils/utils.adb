@@ -23,4 +23,36 @@ package body Utils is
     end loop;
     return result;
   end getBiggestNumberProduct;
+
+  function GetLastSplitString(str : in String;
+                              c   : in Character) return String is
+  begin
+    for I in str'Range loop
+      if (str(I) = c) then
+        return str(I+1 .. str'last);
+      end if;
+    end loop;
+    return str;
+  end GetLastSplitString;
+
+  function GetFirstSplitString(str : in String;
+                               c   : in Character) return String is
+  begin
+    for I in str'Range loop
+      if (str(I) = c) then
+        return str(str'First .. I-1);
+      end if;
+    end loop;
+    return str;
+  end GetFirstSplitString;
+
+  function removeFirstSpace(str : in String) return String is
+  begin
+    if(str(str'First) = ' ') then
+      return(str(str'First + 1 .. str'Last));
+    else
+      return str;
+    end if;
+  end removeFirstSpace;
+
 end Utils;

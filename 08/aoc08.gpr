@@ -1,0 +1,5 @@
+project Aoc08 is
+    for Source_Dirs use ("src", "../utils");
+    for Object_Dir use "obj";
+    for Main use ("aoc08.adb");
+end Aoc08;
