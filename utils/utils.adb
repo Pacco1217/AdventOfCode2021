@@ -13,6 +13,34 @@ package body Utils is
         end loop;
      end loop;
   end Bubble_Sort;
+
+  procedure Bubble_Sort (A : in out Unsigned_32_Array) is
+    Temp : unsigned_32;
+  begin
+     for I in reverse A'Range loop
+        for J in A'First .. I loop
+           if A(I) < A(J) then
+              Temp := A(J);
+              A(J) := A(I);
+              A(I) := Temp;
+           end if;
+        end loop;
+     end loop;
+  end Bubble_Sort;
+
+  procedure Bubble_Sort (A : in out Unsigned_64_Array) is
+    Temp : unsigned_64;
+  begin
+     for I in reverse A'Range loop
+        for J in A'First .. I loop
+           if A(I) < A(J) then
+              Temp := A(J);
+              A(J) := A(I);
+              A(I) := Temp;
+           end if;
+        end loop;
+     end loop;
+  end Bubble_Sort;
   
   function getBiggestNumberProduct (A : in IntegerArray;
                                     N : in Integer) return Integer is
